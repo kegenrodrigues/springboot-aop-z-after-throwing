@@ -49,7 +49,11 @@ public class AccountDAO {
 	}
 	
 	
-	public List<Account> findAccounts(){
+	public List<Account> findAccounts(boolean tripwire){
+		
+		if(tripwire) {
+			throw new RuntimeException("Exception is thrown from findAccounts()");
+		}
 		
 		List<Account> myAccounts = new ArrayList<>();
 		
